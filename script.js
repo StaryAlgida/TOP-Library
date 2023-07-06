@@ -3,15 +3,17 @@ console.log(myLibrary);
 
 let removeBooksListner = NaN;
 
-const addBookButton = document.querySelector("#add-button");
-addBookButton.addEventListener('click', () => AddAndDisplay());
+const addBook = document.querySelector("#add-book");
+addBook.addEventListener("click", () => {
+    AddAndDisplay();
+});
 
 const booksContainer = document.querySelector(".books");
 
 function Book(title, author, pages, bookNumber = 0){
     this.title = `"${title}"`;
     this.author = author;
-    this.pages = pages;
+    this.pages = `Pages: ${pages}`;
     this.bookNumber = bookNumber;
     this.isReaded = false;
     this.book = document.createElement("div");
@@ -22,6 +24,8 @@ Book.prototype.displayBook = function() {
     
     this.book.classList.add("book")
     this.book.setAttribute("id", `div-${this.bookNumber}`);
+    setRandomColor(this.book);
+
 
     let info = document.createElement("div");
     info.classList.add("info");
@@ -50,12 +54,19 @@ Book.prototype.displayBook = function() {
     });
     this.removeButton.classList.add("remove", "but");
     this.removeButton.innerText = "Remove";
-    this.removeButton.setAttribute("id", this.bookNumber);
 
     buttonsContainer.appendChild(isReaded);
     buttonsContainer.appendChild(this.removeButton);
 
     booksContainer.appendChild(this.book);
+}
+
+function getRandomColor(){
+    return Math.floor(Math.random() * 256)
+}
+
+function setRandomColor(bookContainer){
+    bookContainer.style.background = `rgb(${getRandomColor()}, ${getRandomColor()} , ${getRandomColor()}, 0.50 )`;
 }
 
 function AddAndDisplay(){
@@ -64,7 +75,11 @@ function AddAndDisplay(){
 }
 
 function addBookToLibrary(){
-    myLibrary.push(new Book("awd", "awd", 123, myLibrary.length))
+    let title = document.getElementById("title").value;
+    let author = document.getElementById("author").value;
+    let pages = document.getElementById("pages").value;
+
+    myLibrary.push(new Book(title, author, pages, myLibrary.length))
     console.log(myLibrary);    
 }
 

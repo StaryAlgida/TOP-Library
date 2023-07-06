@@ -1,15 +1,24 @@
 *{
     text-decoration: none;
     color: black;
+
+    font-family: 'Martian Mono', monospace;
 }
 body{
     margin: 0;
     padding: 0;
 
-    background-color: gainsboro;
+    background-color: rgb(245, 245, 245);
 
     display: grid;
     grid-template-rows: 100px 1fr;
+}
+
+#side-title{
+    font-size: 1.5rem;
+    text-decoration:underline;
+    text-decoration-color: rgb(243, 35, 8);
+    text-decoration-thickness: 3px;
 }
 
 .menu{
@@ -17,11 +26,13 @@ body{
     justify-content: space-around;
     align-items: center;
 
-    background-color: aqua;
+    background-color: white;
+    box-shadow: 0px 3px 0px 0px rgb(173, 176, 204);
+
+
 }
 
 .books{
-    background-color: beige;
 
     display: flex;
     flex-direction: row;
@@ -34,14 +45,42 @@ body{
 }
 
 .book{
-    background-color: aquamarine;
+    background-color: rgba(127, 255, 212, 0.76);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
+    box-shadow: 0px 0px 12px 0px rgba(66, 68, 90, 1);
+    border-radius: 20px;
+
     width: 200px;
-    height: 200px;
+    height: 230px;
+
+    font-size: 0.8rem;
 }
+
+.but{
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 6px 20px;
+}
+
+.remove{
+    /* background-color: rgba(255, 0, 0, 0.596); */
+    border: 3px solid rgb(221, 221, 221);
+    font-weight: bold;
+
+    box-shadow: inset 0px 0px 8px 0px rgba(66, 68, 90, 1);
+}
+
+.readed{
+    font-weight: bold;
+    color: white;
+    border: 3px solid rgb(247, 247, 247);
+    background-color: rgba(255, 0, 0, 0.7);
+}
+
 
 .info{
     display: flex;
@@ -56,7 +95,11 @@ body{
 }
 
 .user-data{
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    background-color: white;
+    padding: 5px 15px;
+
+    border-radius: 10px;
 }
 
 .buttons{
@@ -76,18 +119,24 @@ body{
     align-items: center;
 
     width: 200px;
-    height: 200px;
+    height: 230px;
 
     border: none;
-    background-color: aqua;
+    background-color:rgba(155, 242, 248, 0.70);
+
+    box-shadow: 0px 0px 12px 0px rgba(66, 68, 90, 1);
+    border-radius: 20px;
 }
 
 #add-button svg{
-    fill: grey;
+    fill: rgb(33, 102, 252);
+    
 }
 
 #button-text{
     margin-top: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
 form{
