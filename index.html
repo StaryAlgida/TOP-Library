@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="menu">
+        <div>
+            <p>Library</p>
+        </div>
+        <div>
+            <a href="#" id="login">Login</a>
+        </div>
+    </div>
+    <div class="books">
+        <!-- <div class="book">
+            <div class="info">
+                <span class="user-data">"awdwa"</span>
+                <span class="user-data">awda</span>
+                <span class="user-data">123</span>
+            </div>
+            <div class="buttons">
+                <button class="readed but" >Not readed</button>
+                <button class="remove but">Remove</button>
+            </div>
+        </div> -->
+    
+        <button id="add-button" onclick="addBookForm.showModal()">
+            <span id="button-text">Add new book</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>plus</title><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
+        </button>
+    </div>
+
+    <dialog id="addBookForm">
+        <form method="dialog">
+            <div>
+                <label for="title">Title</label>
+                <input type="text" name="" id="title">
+            </div>
+            
+            <div>
+                <label for="author">Author</label>
+                <input type="text" name="" id="author">
+            </div>
+            
+            <div>
+                <label for="pages">Pages</label>
+                <input type="number" name="" id="pages">
+            </div>
+            
+            <div id="form-buttons">
+                <button type="reset">Reset</button>
+                <button type="submit">Add book</button>
+            </div>
+
+           
+        </form>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>

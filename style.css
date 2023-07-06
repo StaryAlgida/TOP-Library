@@ -1,0 +1,106 @@
+*{
+    text-decoration: none;
+    color: black;
+}
+body{
+    margin: 0;
+    padding: 0;
+
+    background-color: gainsboro;
+
+    display: grid;
+    grid-template-rows: 100px 1fr;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: aqua;
+}
+
+.books{
+    background-color: beige;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+
+    margin-top: 20px;
+    
+}
+
+.book{
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 200px;
+    height: 200px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    height: max-content;
+}
+
+.user-data:nth-child(1){
+    margin-top: 15px;
+}
+
+.user-data{
+    margin-bottom: 15px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 15px;
+
+}
+
+
+#add-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 200px;
+    height: 200px;
+
+    border: none;
+    background-color: aqua;
+}
+
+#add-button svg{
+    fill: grey;
+}
+
+#button-text{
+    margin-top: 15px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+#form-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+}
