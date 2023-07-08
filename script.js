@@ -15,7 +15,7 @@ function Book(title, author, pages, bookNumber = 0){
     this.author = author;
     this.pages = `Pages: ${pages}`;
     this.bookNumber = bookNumber;
-    this.isReaded = false;
+    this.isReaded = true;
     this.book = document.createElement("div");
     this.removeButton = document.createElement("button");
 }
@@ -45,9 +45,24 @@ Book.prototype.displayBook = function() {
     buttonsContainer.classList.add("buttons");
     this.book.appendChild(buttonsContainer);
 
-    let isReaded = document.createElement("button");
-    isReaded.classList.add("readed", "but");
-    isReaded.innerText = "Not readed";
+    let isReadedButton = document.createElement("button");
+    
+    isReadedButton.addEventListener("click", () => {
+        if (this.isReaded){
+            isReadedButton.innerText = "Readed";
+            isReadedButton.style.background = "rgba(15, 179, 0, 0.7)";
+            this.isReaded = false;
+
+        }
+        else{
+            isReadedButton.innerText = "Not readed";
+            isReadedButton.style.background = "rgba(255, 0, 0, 0.7)";
+            this.isReaded = true;
+        }
+    });
+
+    isReadedButton.classList.add("readed", "but");
+    isReadedButton.innerText = "Not readed";
 
     this.removeButton.addEventListener("click", () =>{
         removeBook(this.bookNumber);
@@ -55,7 +70,7 @@ Book.prototype.displayBook = function() {
     this.removeButton.classList.add("remove", "but");
     this.removeButton.innerText = "Remove";
 
-    buttonsContainer.appendChild(isReaded);
+    buttonsContainer.appendChild(isReadedButton);
     buttonsContainer.appendChild(this.removeButton);
 
     booksContainer.appendChild(this.book);
